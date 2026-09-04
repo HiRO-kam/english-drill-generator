@@ -96,6 +96,15 @@ def load_examples(excel_file: Path) -> pd.DataFrame:
 
     return df.reset_index(drop=True)
 
+# ========================
+#未出題集合を計算
+# =========================
+def get_unanswered_ids(
+    df: pd.DataFrame,
+    appeared_ids: set[int],
+) -> set[int]:
+    all_ids = set(df[ID_COLUMN])
+    return all_ids - appeared_ids
 
 # =========================
 # ランダム抽出
@@ -109,7 +118,10 @@ def select_questions(
     all_ids = set(df[ID_COLUMN])
 
     # 未出題ID
-    unanswered_ids = all_ids - appeared_ids
+    unanswered_ids = get_unanswered_ids(
+        df,
+        appeared_ids,
+    )
 
     # -----------------------
     # 未出題が15問以上

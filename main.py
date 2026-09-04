@@ -434,33 +434,6 @@ def create_answer_pdf(
 
     pdf.save()
 
-
-# =========================
-# 抽出結果のExcel保存
-# =========================
-
-def save_selected_questions(
-    questions: pd.DataFrame,
-    output_file: Path,
-) -> None:
-    """
-    今回どの問題を抽出したかをExcelに保存する。
-    PDFを作り直すときや採点するときに便利。
-    """
-
-    result = questions.copy()
-    result.insert(
-        0,
-        "Number",
-        range(1, len(result) + 1),
-    )
-
-    result.to_excel(
-        output_file,
-        index=False,
-    )
-
-
 # =========================
 # メイン処理
 # =========================

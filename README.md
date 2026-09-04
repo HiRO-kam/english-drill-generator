@@ -1,8 +1,9 @@
 # English Drill Generator
 
 ## 概要
-sample_data.xlsxのように| ID | Japanese | English |を入力し，main.pyを実行すると，Excelに登録した日本語・英語の例文から、英作文練習用の問題PDFと解答PDFを自動生成するPythonツールです．
-過去の出題履歴を保存し，全問題が一度出題されるまで未出題の問題を優先して抽出します．従来の問題作成の効率を格段に上げ個人でのドリルの作成を可能にしました．
+Excelに登録した日本語・英語の例文から、英作文練習用の問題PDFと解答PDFを自動生成するPythonツールです．
+過去の出題履歴を保存し，全問題が一度出題されるまで未出題の問題を優先して抽出します．
+問題選択からPDF作成までを自動化し,個人でも繰り返し英作文ドリルを生成できるようにしました.
 
 ## 背景
 問題集をExcelで管理している場合、
@@ -36,7 +37,7 @@ sample_data.xlsxのように| ID | Japanese | English |を入力し，main.pyを
 
 1. `sample_data.xlsx` の形式で問題を入力します。
 
-##入力例
+###入力例
 
 | ID | Japanese | English |
 |---|---|---|
@@ -45,11 +46,21 @@ sample_data.xlsxのように| ID | Japanese | English |を入力し，main.pyを
 
 2. 必要なライブラリをインストールします。
 
+```bash
 pip install -r requirements.txt
+```
 
 3. プログラムを実行します。
 
+```bash
 python main.py
+```
+## 出力例
+
+Excelに登録した例文から、以下のPDFを生成します。
+
+- [問題PDF](samples/sample_question.pdf)
+- [解答PDF](samples/sample_answer.pdf)
 
 4. PDFが自動生成されます。
 
@@ -60,6 +71,7 @@ python main.py
 - PDFレイアウトのカスタマイズ
 
 ## ディレクトリ構成
+```
 english-drill-generator/
 ├── main.py
 ├── README.md
@@ -74,3 +86,4 @@ english-drill-generator/
 └── output/
     ├── drill_20260904_....pdf
     └── answer_20260904_....pdf
+```

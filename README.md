@@ -36,7 +36,7 @@ sample_data.xlsxのように| ID | Japanese | English |を入力し，main.pyを
 
 1. `sample_data.xlsx` の形式で問題を入力します。
 
-###入力例
+##入力例
 
 | ID | Japanese | English |
 |---|---|---|

@@ -1,9 +1,5 @@
+.venv/
 history.xlsx
-
-drill_*.pdf
-answer_*.pdf
-
+output/
 __pycache__/
 *.pyc
-
-.venv/

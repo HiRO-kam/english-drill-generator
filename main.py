@@ -15,6 +15,7 @@ from reportlab.pdfgen import canvas
 BASE_DIR = Path(__file__).parent
 EXCEL_FILE = BASE_DIR / "sample_data.xlsx"
 HISTORY_FILE = BASE_DIR / "history.xlsx"
+OUTPUT_DIR = BASE_DIR / "output"
 
 ID_COLUMN = "ID"
 JAPANESE_COLUMN = "Japanese"
@@ -114,8 +115,6 @@ def select_questions(
     df: pd.DataFrame,
     appeared_ids: set[int],
 ) -> tuple[pd.DataFrame, set[int]]:
-
-    all_ids = set(df[ID_COLUMN])
 
     # 未出題ID
     unanswered_ids = get_unanswered_ids(
@@ -468,8 +467,6 @@ def main() -> None:
         appeared_ids,
         HISTORY_FILE,
     )
-
-    OUTPUT_DIR = BASE_DIR / "output"
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 

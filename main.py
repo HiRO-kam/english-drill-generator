@@ -361,7 +361,6 @@ def create_question_pdf(
 
     pdf.save()
 
-
 # =========================
 # 解答PDF
 # =========================
@@ -470,10 +469,14 @@ def main() -> None:
         HISTORY_FILE,
     )
 
+    OUTPUT_DIR = BASE_DIR / "output"
+
+    OUTPUT_DIR.mkdir(exist_ok=True)
+
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    question_pdf = BASE_DIR / f"drill_{timestamp}.pdf"
-    answer_pdf = BASE_DIR / f"answer_{timestamp}.pdf"
+    question_pdf = OUTPUT_DIR / f"drill_{timestamp}.pdf"
+    answer_pdf = OUTPUT_DIR / f"answer_{timestamp}.pdf"
 
     create_question_pdf(
         questions,

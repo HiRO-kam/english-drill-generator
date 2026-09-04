@@ -1,0 +1,9 @@
+history.xlsx
+
+drill_*.pdf
+answer_*.pdf
+
+__pycache__/
+*.pyc
+
+.venv/

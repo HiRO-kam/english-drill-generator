@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-## 出力例
+### 出力例
 
 Excelに登録した例文から、以下のPDFを生成します。
 
